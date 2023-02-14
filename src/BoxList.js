@@ -19,21 +19,6 @@ class BoxList extends Component {
     }
     renderList() {
 
-    //    this.state.boxList.map((item, index) => {
-    //         return (
-    //             <div style={{ textAlign: "-webkit-center" }}>
-    //            <div key={item.id} style={{
-    //                                     textAlign: "-webkit-center",
-    //                                     height: item.height + "px",
-    //                                     width: item.width + "px",
-    //                                     backgroundColor: item.backgroundColor
-    //                                 }} >
-    //                        <button onClick={this.RemoveBox} key={index} >Remove Color</button>              
-    //            </div>
-    //            </div>
-               
-    //            )
-    //     });
         
         return (
             <div style={{ textAlign: "-webkit-center" }}>
@@ -79,7 +64,6 @@ class BoxList extends Component {
         this.setState(state => ({
             boxList: [...state.boxList, newBox]
         }));
-
 
     }   //End of add
 
