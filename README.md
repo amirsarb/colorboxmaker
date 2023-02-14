@@ -1,3 +1,108 @@
+<div>
+  <h1 align="center"> ColorBoxMaker is a project in React 🧑‍💻</h1>
+  <h2 align="center"> A component based pratice for Forms</h2>
+<h3>Goals</h3>
+  <ul>
+  <li>
+    Practicing Forms
+  </li>
+  <li>
+    Practicing Component
+  </li>
+   <li>
+    Practicing Props / State
+  </li>
+
+   </ul>
+
+  <p>
+    Screenshot:
+  </p>
+
+  <a href="">
+    <img
+      alt="ColorBoxMaker"
+      src="screenshot.jpg"
+    />
+  </a>
+</div>
+
+<hr />
+
+## Requirements
+- NPM
+- React
+- React-dom
+- UUID
+
+
+## Main Components
+
+
+- BoxList Component
+The main component that contains Props and States and Main Functions (addBox & removeBox)
+
+```javascript
+class BoxList extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            boxList: [
+                { id: uuidv4(), height: "150", width: "150", backgroundColor: "black" }
+            ]
+
+        }
+        this.AddBox = this.AddBox.bind(this)
+        this.renderList = this.renderList.bind(this)
+        this.RemoveBox = this.RemoveBox.bind(this)
+    }
+```
+- AddBox
+Add box to the boxlist by using setState
+
+```javascript
+    AddBox(box) {
+        let newBox = { ...box, id: uuidv4() };
+        this.setState(state => ({
+            boxList: [...state.boxList, newBox]
+        }));
+
+    } 
+```
+- RemoveBox
+Remove a box from array of object by using filter
+
+```javascript
+    RemoveBox( index) {
+       var newList =  this.state.boxList.filter(item =>
+        item.id !== index
+      )
+          this.setState({boxList:newList});
+    }
+```
+
+- Box Component
+This is a simple component that renders a div by props parameters
+
+```javascript
+class Box extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+
+
+        }
+    }
+
+    render() {
+
+        const { height, width, backgroundColor } = this.props
+        return (<div style={{ height: height, width: width, backgroundColor: backgroundColor }}></div>)
+    }
+}
+```
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
